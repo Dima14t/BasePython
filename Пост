@@ -1,0 +1,8 @@
+1) git add . (добавляет все файлы и папки)
+2) git commit -m "поместить ваше сообщение"
+3) git config --global user.email "dimoncik034@gmail.com"
+4) git config --global user.name "Dima"
+5)  git commit -m "initial"
+6) 1. git push
+     2. Username for 'https://github.com': Dima14t (ГДЕ КОТИК)
+     3. Password for 'https://Dima14t@github.com': (Сгенерировать Settings -> Developer settings -> Personal access tokens -> Tokens(classic))
