@@ -3,7 +3,7 @@
 1) Перейдите в директорию вашего проекта (если еще не в ней).
 2) Выполните git add . для добавления изменений.
 3) Затем введите git commit -m "Ваше сообщение" для фиксации изменений.
-4) Убедитесь, что корректно настроены ваши учетные данные с помощью git config --global user.email и git config --global user.name.
+4) Убедитесь, что корректно настроены ваши учетные данные с помощью git config --global user.email и git config --global user.name
 5) 1. git push
      2. Username for 'https://github.com': Dima14t (ГДЕ КОТИК)
      3. Password for 'https://Dima14t@github.com': (Сгенерировать Settings -> Developer settings -> Personal access tokens -> Tokens(classic))
