@@ -1,0 +1,6 @@
+ ! [rejected]        main -> main (non-fast-forward)
+error: не удалось отправить некоторые ссылки в «https://github.com/Dima14t/BasePython.git»
+подсказка: Updates were rejected because the tip of your current branch is behind
+подсказка: its remote counterpart. If you want to integrate the remote changes,
+подсказка: use 'git pull' before pushing again.
+подсказка: See the 'Note about fast-forwards' in 'git push --help' for details.
