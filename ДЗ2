@@ -1,10 +1,8 @@
-def function(n):
-    n = int(input("Напиши число что бы найти факториал: "))
-    i = 1
-    if n == 0:
-        return print("1")
-    if n < 0:
-        return print("Это отрицательное число, тут нет факториала! ")
-    for i in range(1+n,+1):
-        return print(f"Факториал {i} = {n}")
-    function(n)
+def factorial():
+    n = int(input("Введите число для вычисления факториала: "))
+    result = 1
+    for i in range(1, n + 1):
+        result *= i
+    print(f"Факториал {n} равен {result}")
+
+factorial()
