@@ -109,3 +109,94 @@ def book_dictionary():
     print(books)
 
 book_dictionary()
+
+# 4.5
+
+# Вот пример того, как можно записать информацию о 5 книгах
+# в файл books.json на языке Python:
+
+import json
+
+# Данные о книгах
+books = [
+    {
+        "title": "1984",
+        "author": "George Orwell",
+        "year": 1949,
+        "genre": "Dystopian"
+    },
+    {
+        "title": "To Kill a Mockingbird",
+        "author": "Harper Lee",
+        "year": 1960,
+        "genre": "Fiction"
+    },
+    {
+        "title": "The Great Gatsby",
+        "author": "F. Scott Fitzgerald",
+        "year": 1925,
+        "genre": "Fiction"
+    },
+    {
+        "title": "Moby Dick",
+        "author": "Herman Melville",
+        "year": 1851,
+        "genre": "Adventure"
+    },
+    {
+        "title": "War and Peace",
+        "author": "Leo Tolstoy",
+        "year": 1869,
+        "genre": "Historical Fiction"
+    }
+]
+
+# Запись данных в файл books.json
+with open('books.json', 'w') as json_file:
+    json.dump(books, json_file, indent=4)
+
+print("Данные о книгах успешно записаны в books.json.")
+
+# Этот код создает список из 5 книг с их заголовками, авторами,
+# годами публикации и жанрами, а затем записывает эти данные в
+# файл books.json в формате JSON.
+
+# 4.6
+
+# Для выполнения этих задач, Вам нужно создать файл books.json и записать в
+# него информацию о 5 книгах, а затем написать код для чтения этой информации и вывода в консоль.
+# Вот пример, как это можно сделать на языке Python.
+# 1. Запись информации о 5 книгах в books.json
+
+
+import json
+
+books = [
+    {"title": "1984", "author": "George Orwell", "year": 1949},
+    {"title": "To Kill a Mockingbird", "author": "Harper Lee", "year": 1960},
+    {"title": "The Great Gatsby", "author": "F. Scott Fitzgerald", "year": 1925},
+    {"title": "Moby Dick", "author": "Herman Melville", "year": 1851},
+    {"title": "War and Peace", "author": "Leo Tolstoy", "year": 1869}
+]
+
+with open('books.json', 'w') as f:
+    json.dump(books, f, indent=4)
+
+# 2. Чтение информации из books.json и вывод в консоль
+
+Python
+
+import json
+
+with open('books.json', 'r') as f:
+    books = json.load(f)
+    for book in books:
+        print(f"Title: {book['title']}, Author: {book['author']}, Year: {book['year']}")
+
+# Объяснение:
+#
+#     В первом блоке кода мы создаем список словарей, где каждый словарь представляет книгу
+#     с её заголовком, автором и годом издания. Затем мы записываем этот список в файл books.json.
+#     Во втором блоке кода мы открываем файл books.json,
+#     загружаем данные и выводим информацию о каждой книге в консоль.
+
