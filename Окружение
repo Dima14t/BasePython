@@ -1,0 +1,28 @@
+ПРОЧИТАТЬ 2 РАЗА!!!
+https://sky.pro/media/kak-sozdat-virtualnoe-okruzhenie-python/
+https://timeweb.com/ru/community/articles/kak-sozdat-virtualnoe-okruzhenie-v-python
+https://dvmn.org/encyclopedia/qna/12/chto-takoe-virtualnoe-okruzhenie-zachem-ono-kakie-byvajut-analogi/
+
+СНАЧАЛА СОЗДАЕМ ОКРУЖЕНИЕ:
+создание виртуального окружения Линукс:
+python3 -m venv venv
+
+создание виртуального окружения Windows
+python -m venv venv
+
+ПОТОМ АКТИВИРУЕМ
+активация виртуального окружения Линукс:
+source venv/bin/activate
+
+активация виртуального окружения Windows
+venv\Scripts\activate.bat
+
+ПОТОМ УСТАНАВЛИВАЕМ БИБЛИОТЕКИ
+pip install requests bs4
+
+УСТАНОВКА ИЗ ФАЙЛА:
+pip install -r requirements.txt
+
+СОХРАНЕНИЕ БИБЛИОТЕК В ФАЙЛ:
+pip freeze > requirements.txt
+
