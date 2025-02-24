@@ -1,0 +1,15 @@
+import requests
+from bs4 import BeautifulSoup
+
+URL = 'https://www.alta.ru/currency/'
+r = requests.get(URL)
+soup = BeautifulSoup(r.text, 'html.parser')
+
+
+USD = soup.find("span", class_="col-50 t-right mr5 m-mr2")
+
+if USD:
+    currency_value = USD.text.strip() # Удаляем лишние пробелы
+    print(currency_value)
+else:
+    print("Элемент не найден.")
