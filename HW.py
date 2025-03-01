@@ -1,47 +1,29 @@
-# Задание 1
-# написать программу, которая запрашивает у пользователя номер месяца и выводит название
-# этого месяца Если введено число 0 или число больше 12, то написать, что номер месяца
-# должен быть от 1 до 12
+# Дописать программу таким образом, чтобы в случае корректного имени выводилось сообщение
+# в формате: Имя Elena относится к женскому полу с вероятностью 99%
+# В случае некорректного имени выводилось сообщение Имя введено не корректно.
 
-# Запрашиваем у пользователя номер месяца
-month_number = int(input("Введите номер месяца (от 1 до 12): "))
+import requests
 
-# Проверяем номер месяца и выводим название месяца
-if month_number == 1:
-    print("Январь")
-elif month_number == 2:
-    print("Февраль")
-elif month_number == 3:
-    print("Март")
-elif month_number == 4:
-    print("Апрель")
-elif month_number == 5:
-    print("Май")
-elif month_number == 6:
-    print("Июнь")
-elif month_number == 7:
-    print("Июль")
-elif month_number == 8:
-    print("Август")
-elif month_number == 9:
-    print("Сентябрь")
-elif month_number == 10:
-    print("Октябрь")
-elif month_number == 11:
-    print("Ноябрь")
-elif month_number == 12:
-    print("Декабрь")
-else:
-    print("Номер месяца должен быть от 1 до 12.")
 
-# Задание 2
-# написать программу, которая запрашивает у пользователя его имя, фамилию, возраст Вывести
-# полученные данные на экран Если возраст, меньше 18, дополнительно вывести сообщение об этом
+def get_data(name: str):
+    url = f"https://api.genderize.io?name={name}"
+    response = requests.get(url)
+    data = response.json()
+    return data
 
-in_name = input("Имя - ")
-in_nameF = input("Фамилия - ")
-in_age = int(input("Возраст - "))
-if in_age < 18:
-    print(" Вам меньше 18 ! Ата та ! ")
-else:
-    print(" Вам есть 18 ")
+def parse_data(data: dict):
+    name = data.get('name')
+    gender = data.get('gender')
+    probability = data.get('probability')
+    probability_number = int(probability * 100)
+
+    if gender:
+        gender_rus = "мужскому" if gender == "male" else "женскому"
+        print(f" Имя {name} относится к {gender_rus} полу. С вероятностью {probability_number}% . ")
+    else:
+        print("Имя введено не корректно.")
+
+
+name = input("Введите имя: ")
+data = get_data(name)
+parse_data(data)
