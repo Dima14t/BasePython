@@ -1,55 +1,8 @@
-import requests
-from requests.exceptions import ConnectionError
+Напишите функцию, которая принимает строку и проверяет,
+является ли строка автомобильным номером формата А123АА198
+Функция должна возвращать True или False
 
 
-def get_image_url(url: str):
-    try:
-        response = requests.get(url)
-        data = response.json()
-        if data["status"] == "error":
-            print(f"Получена ошибка {data['message']}")
-            return None
-        return data['message']
-    except ConnectionError:
-        print("Ошибка сервера")
-        return None
+** Напишите программу которая выводит на экран сумму чисел от 20 до 30
 
-def get_image(image_url: str):
-    response = requests.get(image_url)
-    return response.content
-
-def download_image(image: bytes, name: str):
-    with open(name, "wb") as file:
-        file.write(image)
-
-
-N = 5
-URL = "https://dog.ceo/api/breeds/image/random"
-
-for i in range(1, N+1):
-    image_url = get_image_url(URL)
-    print(image_url)
-    image = get_image(image_url)
-    name = f"dog_{i}.jpg"
-    download_image(image, name)
-
-
-
-
-
-"""
-https://dog.ceo/api/breeds/image/random     - random_dog()
-https://dog.ceo/dog-api/                    - index()
-
-def index():
-    return TemplateResponse("pages/index.html")
-
-
-def random_dog():
-    try:
-        url = get_random_url()
-        data = {"status": "success", "message": url}
-    except:
-        data = {"status": "error", "message": "error"}
-    return data
-"""
+** Напишите программу которая выводит на экран сумму четных чисел от 10 до 20
