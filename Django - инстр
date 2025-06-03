@@ -1,0 +1,13 @@
+1) Заходим в PyCharm -> settings... -> Project: django-library-> Python lnterpreter -> нажимаем на + -> пишем Django и версию(4.2)
+
+2) Пишем все ниже в терминал!
+
+3) django-admin startproject password_generator_project
+
+4) cd password_generator_project/
+
+5) python manage.py runserver
+
+6) python manage.py startapp myapp (Мы создаем приложение myapp - это название)
+
+7) ^C - Остановить сервер (CTRL + C)
